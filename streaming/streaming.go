@@ -41,11 +41,11 @@ type Stream struct {
 	token  string
 	dialer *websocket.Dialer
 
-	mu         sync.RWMutex
-	conn       *websocket.Conn
-	subs       map[string]*subscription // id -> subscription
-	nextID     int
-	closed     bool
+	mu     sync.RWMutex
+	conn   *websocket.Conn
+	subs   map[string]*subscription // id -> subscription
+	nextID int
+	closed bool
 
 	// Auto-reconnect
 	reconnect bool
@@ -101,10 +101,10 @@ func NewStream(baseURL, token string, opts ...Option) *Stream {
 	}
 
 	s := &Stream{
-		url:     fmt.Sprintf("%s/streaming?i=%s", wsURL, url.QueryEscape(token)),
-		token:   token,
-		dialer:  websocket.DefaultDialer,
-		subs:    make(map[string]*subscription),
+		url:       fmt.Sprintf("%s/streaming?i=%s", wsURL, url.QueryEscape(token)),
+		token:     token,
+		dialer:    websocket.DefaultDialer,
+		subs:      make(map[string]*subscription),
 		reconnect: true,
 	}
 	for _, opt := range opts {
@@ -414,8 +414,8 @@ func (s *Stream) UncaptureNote(noteID types.ID) error {
 
 // clientMessage is the JSON structure sent to the server.
 type clientMessage struct {
-	Type string      `json:"type"`
-	Body any         `json:"body"`
+	Type string `json:"type"`
+	Body any    `json:"body"`
 }
 
 // serverMessage is the JSON structure received from the server.
@@ -430,8 +430,6 @@ type channelBody struct {
 	Type string          `json:"type"`
 	Body json.RawMessage `json:"body"`
 }
-
-
 
 func writeJSONTo(conn *websocket.Conn, v any) {
 	if conn == nil {

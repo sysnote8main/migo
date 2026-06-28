@@ -41,8 +41,8 @@ import (
 	"github.com/sysnote8main/migo/sw"
 	"github.com/sysnote8main/migo/test"
 	"github.com/sysnote8main/migo/timeline"
-	"github.com/sysnote8main/migo/users"
 	"github.com/sysnote8main/migo/username"
+	"github.com/sysnote8main/migo/users"
 )
 
 // Services bundles all service interfaces for convenient access.

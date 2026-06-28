@@ -25,21 +25,21 @@ func main() {
 	knownTypes := map[string]string{
 		"Error": "any", "UserLite": "types.UserLite",
 		"UserDetailedNotMeOnly": "types.UserDetailedNotMeOnly",
-		"MeDetailedOnly": "types.MeDetailedOnly",
-		"MeDetailed": "types.MeDetailed",
-		"UserDetailed": "types.UserDetailed",
-		"User": "types.UserLite",
-		"Note": "types.Note", "NoteDraft": "types.Note",
+		"MeDetailedOnly":        "types.MeDetailedOnly",
+		"MeDetailed":            "types.MeDetailed",
+		"UserDetailed":          "types.UserDetailed",
+		"User":                  "types.UserLite",
+		"Note":                  "types.Note", "NoteDraft": "types.Note",
 		"DriveFile": "types.DriveFile", "DriveFolder": "types.DriveFolder",
 		"Drive": "types.Drive", "Channel": "types.Channel",
 		"Poll": "types.Poll", "Page": "types.Page",
-		"Announcement": "types.Announcement",
+		"Announcement":  "types.Announcement",
 		"EmojiDetailed": "types.EmojiDetailed",
-		"ChatMessage": "types.ChatMessage", "ChatRoom": "types.ChatRoom",
+		"ChatMessage":   "types.ChatMessage", "ChatRoom": "types.ChatRoom",
 		"ChatRoomInvitation": "types.ChatRoomInvitation",
-		"Notification": "types.Notification",
-		"AbuseReport": "types.AbuseReport",
-		"Meta": "types.Meta",
+		"Notification":       "types.Notification",
+		"AbuseReport":        "types.AbuseReport",
+		"Meta":               "types.Meta",
 	}
 
 	pkgMap := map[string]string{
@@ -473,7 +473,7 @@ func trimPrefix(path string) string {
 // ---- OpenAPI types ----
 
 type Spec struct {
-	Paths      PathsMap                 `json:"paths"`
+	Paths      PathsMap `json:"paths"`
 	Components struct {
 		Schemas map[string]Schema `json:"schemas"`
 	} `json:"components"`
